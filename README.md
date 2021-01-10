@@ -26,3 +26,58 @@ This checklist can guide you through your Machine Learning projects. There are e
 10. How would you solve the problem manually?
 11. List the assumptions you (or others) have made so far.
 12. Verify assumptions if possible.
+
+## 2.Get the Data
+Note: automate as much as possible so you can easily get fresh data.
+1. List the data you need and how much you need.
+2. Find and document where you can get that data.
+3. Check how much space it will take.
+4. Check legal obligations, and get authorization if necessary.
+5. Get access authorizations.
+6. Create a workspace (with enough storage space).
+7. Get the data.
+8. Convert the data to a format you can easily manipulate (without changing the data itself).
+9. Ensure sensitive information is deleted or protected (e.g., anonymized).
+10. Check the size and type of data (time series, sample, geographical, etc.).
+11. Sample a test set, put it aside, and never look at it (no data snooping!).
+
+## 3. Explore the Data
+Note: try to get insights from a field expert for these steps.
+1. Create a copy of the data for exploration (sampling it down to a manageable size if necessary).
+2. Create a Jupyter notebook to keep a record of your data exploration.
+3. Study each attribute and its characteristics: <br>
+      . Name <br>
+      . Type (categorical, int/float, bounded/unbounded, text, structured, etc.) <br>
+      . % of missing values <br>
+      . Noisiness and type of noise (stochastic, outliers, rounding errors, etc.) <br>
+      . Usefulness for the task <br>
+      . Type of distribution (Gaussian, uniform, logarithmic, etc.) <br>
+4. For supervised learning tasks, identify the target attribute(s).
+5. Visualize the data.
+6. Study the correlations between attributes.
+7. Study how you would solve the problem manually.
+8. Identify the promising transformations you may want to apply.
+9. Identify extra data that would be useful (go back to Get the Data)
+10. Document what you have learned.
+
+## 4. Prepare the Data
+Notes:
+Work on copies of the data (keep the original dataset intact).<br>
+Write functions for all data transformations you apply, for five reasons: <br>
+    . So you can easily prepare the data the next time you get a fresh dataset <br>
+    . So you can apply these transformations in future projects To clean and prepare the test set <br>
+    . To clean and prepare new data instances once your solution is live<br>
+    . To make it easy to treat your preparation choices as hyperparameters <br>
+
+1. Data cleaning: <br>
+    . Fix or remove outliers (optional).<br>
+    . Fill in missing values (e.g., with zero, mean, median...) or drop their rows (or columns).
+2. Feature selection (optional):<br>
+    . Drop the attributes that provide no useful information for the task.
+3. Feature engineering, where appropriate:<br>
+    . Discretize continuous features.<br>
+    . Decompose features (e.g., categorical, date/time, etc.).<br>
+    . Add promising transformations of features (e.g., log(x), sqrt(x), x2, etc.).<br>
+    . Aggregate features into promising new features. <br>
+4. Feature scaling:<br>
+    . Standardize or normalize features.
